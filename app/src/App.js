@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
+import CandyMachine from './CandyMachine';
 
 //Wallet Public Key - 48MFndJCHYZERsvGx5V5ZchzNikHu8DHYBRbYcG8oTz5
 // Constants
@@ -75,6 +76,8 @@ const App = () => {
           <p className="sub-text">NFT drop machine with fair mint</p>
           {!walletaddress && renderNotConnectedContainer()}
         </div>
+        {/* Check for walletAddress and then pass in walletAddress */}
+        {walletaddress && <CandyMachine walletAddress={window.solana} />}
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
           <a
